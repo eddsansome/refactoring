@@ -1,39 +1,37 @@
 # Refactoring
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/refactoring`. To experiment with that code, run `bin/console` for an interactive prompt.
+Hello and welcome to the Ruby version of Martin Fowler's `Refactoring` book
 
-TODO: Delete this and the text above, and describe your gem
+To get started:
 
-## Installation
+1. fork the repo
+2. clone your copy to your local machine
+`git clone git@github.com:<your_github_username>/refactoring.git`
+3. `bundle install`
+4. run `make all` to run specs for all of the chapters
+5. run `make c{chapter number}` to run specs for a specific chapter
 
-Add this line to your application's Gemfile:
+> Hint, if you haven't implemented the refactoring for a chapter, an error will be raised! Use this to locate where to begin on your journey
+
+## Exercises
+
+- look at code in the respective chapter dir e.g `lib/refactoring/chapters/chapter_1`
+- the code in the `initial.rb` file is from the book
+- the code in the `refactored.rb` file starts out life exactly the same as from the book (albeit in Ruby)
+- it's your job to refactor the `Refactored` class, and ensure the spec for the chapter still passes!
+
+## Exercise structure
+
+lets take a look at an example exercise as an example `lib/refactoring/chapters/chapter_1/refactored.rb`
 
 ```ruby
-gem 'refactoring'
+Refactoring::Chapters::Chapter1::Refactored
 ```
 
-And then execute:
+When you open the file, you will be greeted by a class with a public static `::call` method, and some private static methods `::statement` and `::format`.
 
-    $ bundle install
+The output of the public `::call` method is what we will be testing in the specs.
 
-Or install it yourself as:
+Think of this as a wrapper method for your code. Please feel free to introduce extra classes, methods etc as you see fit
 
-    $ gem install refactoring
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/refactoring.
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+if the code is very complex you could even make a sub directory, just remember to execute your code within the `::call` method so we can check that no behaviour has changed from the initial implementation to the refactored version 🙌
