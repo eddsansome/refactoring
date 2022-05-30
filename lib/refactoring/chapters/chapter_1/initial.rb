@@ -4,7 +4,6 @@ module Refactoring
   module Chapters
     module Chapter1
       class Initial
-        require "json"
         def self.call
           # setup files etc
           invoice_file = File.read("lib/refactoring/chapters/chapter_1/files/invoices.json")

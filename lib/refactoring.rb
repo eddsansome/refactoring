@@ -5,5 +5,6 @@ loader = Zeitwerk::Loader.for_gem
 loader.setup
 
 module Refactoring
+  require "json"
   # this is really just to load zeitwerk
 end

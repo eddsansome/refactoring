@@ -4,7 +4,6 @@ module Refactoring
   module Chapters
     module Chapter1
       class Refactored
-        require "json"
         def self.call
           raise NotImplementedError, "Start the refactoring here!"
           # setup files etc
