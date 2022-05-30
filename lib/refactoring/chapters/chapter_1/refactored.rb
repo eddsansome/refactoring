@@ -6,11 +6,9 @@ module Refactoring
       class Refactored
         def self.call
           raise NotImplementedError, "Start the refactoring here!"
-          # setup files etc
-          invoice_file = File.read("lib/refactoring/chapters/chapter_1/files/invoices.json")
-          plays_file = File.read("lib/refactoring/chapters/chapter_1/files/plays.json")
-          invoice = JSON.parse(invoice_file)
-          plays = JSON.parse(plays_file)
+
+          invoice = JSON.parse(File.read("lib/refactoring/chapters/chapter_1/files/invoices.json"))
+          plays = JSON.parse(File.read("lib/refactoring/chapters/chapter_1/files/plays.json"))
 
           statement(invoice.first, plays)
         end
