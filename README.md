@@ -41,6 +41,6 @@ if the code is very complex you could even make a sub directory, just remember t
 
 To add unit tests for your shiny new objects (which you should be doing as per the book ;) ) - just add the specs in the respective spec/chapter_* 😃.
 
-We are using `zeitwerk` so the same module/class -> filepath naming conventions are the same as `rails`
+We are using `zeitwerk` so the `Module::Class` -> `module/class` filepath naming conventions are the same as `rails`
 
 Have fun!
