@@ -37,3 +37,10 @@ The output of the public `::call` method is what we will be testing in the specs
 Think of this as a wrapper method for your code. Please feel free to introduce extra classes, methods etc as you see fit
 
 if the code is very complex you could even make a sub directory, just remember to execute your code within the `::call` method so we can check that no behaviour has changed from the initial implementation to the refactored version 🙌
+
+
+To add unit tests for your shiny new objects (which you should be doing as per the book ;) ) - just add the specs in the respective spec/chapter_* 😃.
+
+We are using `zeitwerk` so the same module/class -> filepath naming conventions are the same as `rails`
+
+Have fun!
