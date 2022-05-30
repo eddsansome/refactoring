@@ -6,7 +6,9 @@ To get started:
 
 1. fork the repo
 2. clone your copy to your local machine
-`git clone git@github.com:<your_github_username>/refactoring.git`
+```
+git clone git@github.com:<your_github_username>/refactoring.git
+```
 3. `bundle install`
 4. run `make all` to run specs for all of the chapters
 5. run `make c{chapter number}` to run specs for a specific chapter
