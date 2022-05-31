@@ -4,10 +4,7 @@ module Refactoring
   module Chapters
     module Chapter1
       class Initial
-        def self.call
-          invoice = JSON.parse(File.read("lib/refactoring/chapters/chapter_1/files/invoices.json"))
-          plays = JSON.parse(File.read("lib/refactoring/chapters/chapter_1/files/plays.json"))
-
+        def self.call(invoice:, plays:)
           statement(invoice.first, plays)
         end
 

@@ -4,11 +4,8 @@ module Refactoring
   module Chapters
     module Chapter1
       class Refactored
-        def self.call
-          raise NotImplementedError, "Start the refactoring here!"
-
-          invoice = JSON.parse(File.read("lib/refactoring/chapters/chapter_1/files/invoices.json"))
-          plays = JSON.parse(File.read("lib/refactoring/chapters/chapter_1/files/plays.json"))
+        def self.call(invoice:, plays:)
+          raise NotImplementedError, "start the refactoring here!"
 
           statement(invoice.first, plays)
         end
