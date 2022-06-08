@@ -5,8 +5,6 @@ module Refactoring
     module Chapter1
       class Refactored
         def self.call(invoice:, plays:)
-          raise NotImplementedError, "start the refactoring here!"
-
           statement(invoice.first, plays)
         end
 
