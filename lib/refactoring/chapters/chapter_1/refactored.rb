@@ -9,25 +9,21 @@ module Refactoring
         end
 
         def self.statement(invoice, plays)
+
+          # Statement -> (customer, total_amount, volume_credits)
+          # Play
+          # Comedy < Play
+          # Tragedy < Play
+          # Writer = generalIO
+
           total_amount = 0
           volume_credits = 0
           result = "Statement for #{invoice["customer"]}\n"
 
           invoice["performances"].each do |perf|
             play = plays[perf["playID"]]
-            this_amount = 0
 
-            case play["type"]
-            when "tragedy"
-              this_amount = 40_000
-              this_amount += 1000 * (perf["audience"] - 30) if perf["audience"] > 30
-            when "comedy"
-              this_amount = 30_000
-              this_amount += 10_000 + 500 * (perf["audience"] - 20) if perf["audience"] > 20
-              this_amount += 300 * perf["audience"]
-            else
-              raise "unknown type: #{play["type"]}"
-            end
+            this_amount = amount_for(perf, play)
 
             # add volume credits
             volume_credits += [perf["audience"] - 30, 0].max
@@ -46,6 +42,23 @@ module Refactoring
 
         def self.format_amount(num)
           format("$%.2f", num)
+        end
+        def self.amount_for(a_performance, play)
+            result = 0
+
+            case play["type"]
+            when "tragedy"
+              result = 40_000
+              result += 1000 * (a_performance["audience"] - 30) if a_performance["audience"] > 30
+            when "comedy"
+              result = 30_000
+              result += 10_000 + 500 * (a_performance["audience"] - 20) if a_performance["audience"] > 20
+              result += 300 * a_performance["audience"]
+            else
+              raise "unknown type: #{play["type"]}"
+            end
+
+            result
         end
       end
     end
